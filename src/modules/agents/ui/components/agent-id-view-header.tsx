@@ -34,7 +34,7 @@ export const AgentIdViewHeader = ({
   onRemove,
 }: Props) => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-between">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
