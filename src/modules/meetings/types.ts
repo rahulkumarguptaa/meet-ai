@@ -3,7 +3,8 @@ import { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "@/trpc/routers/_app";
 
 export type MeetingGetOne = inferRouterOutputs<AppRouter>["meetings"]["getOne"];
-export type MeetingsGetMany = inferRouterOutputs<AppRouter>["meetings"]["getMany"]["items"];
+export type MeetingsGetMany =
+  inferRouterOutputs<AppRouter>["meetings"]["getMany"]["items"];
 export enum MeetingStatus {
   Upcoming = "upcoming",
   Active = "active",
@@ -11,3 +12,10 @@ export enum MeetingStatus {
   Processing = "processing",
   Cancelled = "cancelled",
 }
+export type StreamTranscriptItem = {
+  speaker_id: string;
+  type: string;
+  text: string;
+  start_ts: number;
+  end_ts: number;
+};
